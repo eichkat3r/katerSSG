@@ -3,6 +3,7 @@
 user=changeme!
 host=changeme!
 
+mkdir -p kater/posts
 /usr/bin/env python3 build.py
 scp index.html $user@$host:html/
 scp rss.xml $user@$host:html/
