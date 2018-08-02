@@ -5,3 +5,4 @@ config.json
 robots.txt
 index.html
 rss.xml
+env/

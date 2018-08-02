@@ -46,7 +46,7 @@ def create_post(message, tags, urls, config):
             editor = os.environ.get('EDITOR', 'vim')
         with tempfile.NamedTemporaryFile(suffix='.tmp') as f:
             f.flush()
-            subprocess.call([EDITOR, f.name])
+            subprocess.call([editor, f.name])
             f.seek(0)
             content = f.read().decode('utf-8')
         if not content and not urls:
