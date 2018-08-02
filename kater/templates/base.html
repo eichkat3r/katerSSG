@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta generator="me usin no generator" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./kater.css" />
+		<title>{{ config.title }}</title>
+	</head>
+	<body>
+<pre id="banner">
+{{ config.banner }}
+</pre>
+		<br>
+		| <a href="rss.xml">RSS</a> |
+		{% for post in posts %}
+		<hr>
+			<a name="{{ post.link }}"></a>
+			<h3>[<a href="#{{ post.link }}">l</a>] {{ post.title }}</h3>
+			<div class="{% for tag in post.tags %}{{ tag }} {% endfor %}">
+				{{ post.content|safe }}
+				{% if post.tags %}
+				<span class="tag">tagged with: </span>
+				{% for tag in post.tags %}<span class="tag">{{ tag }}</span> {% endfor %}
+				{% endif %}
+			</div>{% endfor %}
+		<hr>
+	</body>
+</html>

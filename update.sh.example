@@ -1,0 +1,9 @@
+#!/bin/bash
+
+user=changeme!
+host=changeme!
+
+/usr/bin/env python3 build.py
+scp index.html $user@$host:html/
+scp rss.xml $user@$host:html/
+scp kater.css $user@$host:html/

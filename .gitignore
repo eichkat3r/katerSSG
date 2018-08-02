@@ -1,0 +1,7 @@
+kater/posts/
+kater/__pycache__/
+update.sh
+config.json
+robots.txt
+index.html
+rss.xml

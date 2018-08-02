@@ -1,0 +1,28 @@
+body {
+	font-family: monospace;
+	line-height: 1.5;
+	color: #222;
+	background-color: #fefefe;
+}
+
+h1, h2, h3 {
+	line-height: 1.2em;
+}
+
+pre#banner {
+	line-height: .6em;
+}
+
+pre#subtitle {
+}
+
+ul#navi {
+	list-style-type: None;
+}
+
+ul#navi li {
+}
+
+.tag {
+	font-size: .75em;
+}
