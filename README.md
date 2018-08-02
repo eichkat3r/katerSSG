@@ -39,3 +39,9 @@ hosts html/ directory. You may want to change that.
 $ python3 newpost.py -m "Hello world!" -t firstpost -t yeah
 $ bash update.sh
 ```
+
+## todo
+* code documentation
+* feature overview
+* simplify setup and installation
+* use figlet to create banners
