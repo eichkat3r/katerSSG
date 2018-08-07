@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="https://katrbase.uber.space/rss.xml" rel="self" type="application/rss+xml" />
+		<title>{{ config.title }}</title>
+		<link>{{ config.url }}</link>
+		<description></description>
+		<language>de-de</language>
+		{% for post in posts %}
+		<item>
+			<title>{{ post.title }}</title>
+			<link>{{ config.url }}/#{{ post.link }}</link>
+			<description>{{ post.content }}</description>
+			<pubDate>{{ post.pubDate }} +0200</pubDate>
+			{% for tag in post.tags %}
+			<category>{{ tag }}</category>
+			{% endfor %}
+			<guid>{{ config.url }}/#{{ post.link }}</guid>
+		</item>
+		{% endfor %}
+	</channel>
+</rss>

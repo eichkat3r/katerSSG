@@ -61,7 +61,7 @@ def main():
         autoescape=select_autoescape(['html', 'xml'])
     )
     base = env.get_template('base.html')
-    rss = env.get_template('rss.xml')
+    rss = env.get_template('rssconf.xml')
     posts = load_posts('kater/posts')
     with open('index.html', 'w') as f:
         text = base.render(posts=posts, config=config)

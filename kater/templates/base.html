@@ -12,9 +12,11 @@
 {{ config.banner }}
 </pre>
 		<br>
-		| <a href="rss.xml">RSS</a> |
+		| <a href="rss.xml">RSS</a>
+		| <a href="https://github.com/eichkat3r/katerCMS">GitHub</a> |
 		{% for post in posts %}
 		<hr>
+		<div id="{{ post.link }}">
 			<a name="{{ post.link }}"></a>
 			<h3>[<a href="#{{ post.link }}">l</a>] {{ post.title }}</h3>
 			<div class="{% for tag in post.tags %}{{ tag }} {% endfor %}">
@@ -23,7 +25,9 @@
 				<span class="tag">tagged with: </span>
 				{% for tag in post.tags %}<span class="tag">{{ tag }}</span> {% endfor %}
 				{% endif %}
-			</div>{% endfor %}
+			</div>
+		</div>
+		{% endfor %}
 		<hr>
 	</body>
 </html>

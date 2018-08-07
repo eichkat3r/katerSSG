@@ -55,7 +55,7 @@ def create_post(message, tags, urls, config):
         title = ellipsis(content.splitlines()[0], 80)
     elif urls:
         title = '{}'.format(title_from_url(urls[0]))
-    if title == content:
+    if title == content.strip():
         content = ''
     else:
         content += '<br><br>'
@@ -68,7 +68,7 @@ def create_post(message, tags, urls, config):
         'title': title,
         'content': content,
         'tags': tags,
-        'pubDate': today.strftime('%a, %d %b %Y'),
+        'pubDate': today.strftime('%a, %d %b %Y %H:%M:%S'),
         'link': today.strftime('%Y-%m-%d_%H-%M-%S')
     }
     filename = today.strftime('%Y-%m-%d_%H-%M-%S.json')
