@@ -65,11 +65,15 @@ def create_post(message, tags, urls, config):
         line = '[{}] <a href="{}">{}</a><br>\n'.format(i, url, ellipsis(url, 80))
         content += line
     today = datetime.datetime.today()
+    h_offset = time.localtime().tm_hour - time.gmtime().tm_hour
+    timezone = '%02d00' % h_offset
+    if h_offset >= 0:
+        timezone = '+' + timezone
     post = {
         'title': title,
         'content': content,
         'tags': tags,
-        'pubDate': today.strftime('%a, %d %b %Y %H:%M:%S ') + time.tzname()[0],
+        'pubDate': today.strftime('%a, %d %b %Y %H:%M:%S ') + timezone,
         'link': today.strftime('%Y-%m-%d_%H-%M-%S')
     }
     filename = today.strftime('%Y-%m-%d_%H-%M-%S.json')
