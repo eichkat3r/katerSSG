@@ -1,5 +1,4 @@
-# katerCMS
-
+# katerSSG
 
 
 ## philosophy
