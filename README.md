@@ -1,4 +1,4 @@
-# katerSSG
+# katerCMS
 
 
 
@@ -41,7 +41,6 @@ $ bash update.sh
 ```
 
 ## todo
-[_] code documentation
-[_] feature overview
-[_] simplify setup and installation
-[x] use figlet to create banners
+* code documentation
+* feature overview
+* simplify setup and installation
