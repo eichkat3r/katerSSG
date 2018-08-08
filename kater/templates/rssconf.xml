@@ -11,7 +11,7 @@
 			<title>{{ post.title }}</title>
 			<link>{{ config.url }}/#{{ post.link }}</link>
 			<description>{{ post.content }}</description>
-			<pubDate>{{ post.pubDate }} +0200</pubDate>
+			<pubDate>{{ post.pubDate }}</pubDate>
 			{% for tag in post.tags %}
 			<category>{{ tag }}</category>
 			{% endfor %}

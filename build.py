@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-from jinja2 import Environment, PackageLoader, select_autoescape
-
 import json
 import os
+
+from jinja2 import Environment, PackageLoader, select_autoescape
+
+from pyfiglet import Figlet
 
 
 class Post:
@@ -63,8 +65,11 @@ def main():
     base = env.get_template('base.html')
     rss = env.get_template('rssconf.xml')
     posts = load_posts('kater/posts')
+    fig = Figlet(font=config.get('font', 'banner'))
+    bannertext = config.get('banner', '')
+    banner = fig.renderText(bannertext).replace('#', '@')
     with open('index.html', 'w') as f:
-        text = base.render(posts=posts, config=config)
+        text = base.render(posts=posts, config=config, banner=banner)
         f.write(text)
     with open('rss.xml', 'wb') as f:
         text = rss.render(posts=posts, config=config)

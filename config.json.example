@@ -1,5 +1,6 @@
 {
 	"banner": "example page",
+	"font": "banner",
 	"title": "example page",
 	"url": "changeme!"
 }

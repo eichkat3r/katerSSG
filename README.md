@@ -41,7 +41,7 @@ $ bash update.sh
 ```
 
 ## todo
-* code documentation
-* feature overview
-* simplify setup and installation
-* use figlet to create banners
+[_] code documentation
+[_] feature overview
+[_] simplify setup and installation
+[x] use figlet to create banners

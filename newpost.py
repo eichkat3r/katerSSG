@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import time
 
 
 def ellipsis(string, length):
@@ -68,7 +69,7 @@ def create_post(message, tags, urls, config):
         'title': title,
         'content': content,
         'tags': tags,
-        'pubDate': today.strftime('%a, %d %b %Y %H:%M:%S'),
+        'pubDate': today.strftime('%a, %d %b %Y %H:%M:%S ') + time.tzname()[0],
         'link': today.strftime('%Y-%m-%d_%H-%M-%S')
     }
     filename = today.strftime('%Y-%m-%d_%H-%M-%S.json')
