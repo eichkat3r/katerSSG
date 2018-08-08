@@ -2,6 +2,8 @@
 import json
 import os
 
+import htmlmin
+
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 from pyfiglet import Figlet
@@ -70,6 +72,8 @@ def main():
     banner = fig.renderText(bannertext).replace('#', '@')
     with open('index.html', 'w') as f:
         text = base.render(posts=posts, config=config, banner=banner)
+        if config.get('minify', False):
+            text = htmlmin.minify(text, remove_empty_space=True)
         f.write(text)
     with open('rss.xml', 'wb') as f:
         text = rss.render(posts=posts, config=config)

@@ -1,6 +1,7 @@
 {
 	"banner": "example page",
 	"font": "banner",
+	"minify": false,
 	"title": "example page",
 	"url": "changeme!"
 }
